@@ -1,6 +1,6 @@
 const capitalize = require('./capitalize');
 
-describe('Capitalize only string format inputs', () => {
+describe('Capitalize String', () => {
   describe('Checking for string only!', () => {
     test(`Given 3 should produce Error:"Exepct string in letters format only!"`, () => {
       // Arrange
@@ -22,6 +22,19 @@ describe('Capitalize only string format inputs', () => {
 
       // Assert
       expect(() => capitalize(number_in_string_format)).toThrow(error);
+    });
+  });
+
+  describe('Checking for capitalizing the string', () => {
+    test(`Given "javascript" should produce "Javascript"`, () => {
+      // Arrange
+      const string = 'javascript';
+      const capitalized_string = 'Javascript';
+
+      // Act
+      const result = capitalize(string);
+      // Assert
+      expect(result).toEqual(capitalized_string);
     });
   });
 });

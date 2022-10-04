@@ -1,9 +1,7 @@
 const capitalize = (string) => {
-  const test = '/^[A-Za-z]+$';
-  if (test.match(string)) {
+  if (typeof Number(string) === 'number') {
+    throw new Error('Exepct string format only!');
   }
-
-  throw new Error('Exepct string format only!');
 };
 
 module.exports = capitalize;
